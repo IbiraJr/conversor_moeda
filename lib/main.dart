@@ -27,42 +27,50 @@ class _HomeState extends State<Home> {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Icon(Icons.monetization_on, size: 150.0, color: Colors.amber),
             Divider(),
-            RaisedButton(
-              color: Colors.black,
-              child: Text(
-                'Dolar',
-                style: TextStyle(
-                  fontSize: 30.0,
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width*0.3,
+              child: RaisedButton(
+                color: Colors.amber,
+                child: Text(
+                  'Dolar',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                  ),
                 ),
+                textColor: Colors.black,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaDolar()),
+                  );
+                },
               ),
-              textColor: Colors.amber,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => TelaDolar()),
-                );
-              },
             ),
             Divider(),
-            RaisedButton(
-              color: Colors.black,
-              child: Text(
-                'Euro',
-                style: TextStyle(
-                  fontSize: 30.0,
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width*0.3,
+              child: RaisedButton(
+                color: Colors.amber,
+                child: Text(
+                  'Euro',
+                  style: TextStyle(
+                    fontSize: 30.0,
+                  ),
                 ),
+                textColor: Colors.black,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaEuro()),
+                  );
+                },
               ),
-              textColor: Colors.amber,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => TelaEuro()),
-                );
-              },
             ),
           ],
         ),

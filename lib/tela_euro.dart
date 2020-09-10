@@ -71,6 +71,14 @@ class _TelaEuroState extends State<TelaEuro> {
                             fontSize: 25.0),
                         textAlign: TextAlign.center,)
                   );
+                case ConnectionState.waiting:
+                  return Center(
+                      child: Text("Carregando Dados...",
+                        style: TextStyle(
+                            color: Colors.amber,
+                            fontSize: 25.0),
+                        textAlign: TextAlign.center,)
+                  );
                 default:
                   if(snapshot.hasError){
                     return Center(
@@ -107,6 +115,7 @@ Widget buildTextField(String label, String prefix, TextEditingController c, Func
     decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(color: Colors.amber),
+        enabledBorder:  OutlineInputBorder(borderSide: BorderSide(color: Colors.amber,width: 1,style: BorderStyle.solid)),
         border: OutlineInputBorder(),
         prefixText: prefix
     ),
